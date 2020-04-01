@@ -1,0 +1,54 @@
+@import "../../utils/variables.scss";
+
+.menu-mobile {
+  position: absolute;
+  left: -100px;
+  top: $header-height;
+  width: 100px;
+  height: calc(100% - #{$header-height});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background: $header-bg;
+  // background: linear-gradient(180deg, #fc466b 0%, #3f5efb 100%);
+  background: white;
+  border-radius: 0% 50% 350% 0%;
+  perspective: 800px;
+  transition: $mobile-menu-transition;
+  z-index: 2;
+}
+
+.menu-mobile_opened {
+  width: 100%;
+  left: 0;
+  border-radius: 0% 0% 0% 0%;
+}
+
+.menu-mobile__list {
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(-120deg) translateX(-300px);
+  transition: $mobile-menu-transition;
+}
+
+.menu-mobile__list_opened {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0) translateX(0);
+}
+
+.menu-mobile__item {
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}

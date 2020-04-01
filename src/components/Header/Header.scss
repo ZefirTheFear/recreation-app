@@ -1,0 +1,48 @@
+@import "../../utils/variables.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  z-index: 10;
+  background: $header-bg;
+  // border-bottom: 1px solid white;
+}
+
+.header__inner {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  height: 90%;
+  margin-right: 5rem;
+  cursor: pointer;
+}
+
+.header__logo-img {
+  height: 100%;
+}
+
+.header__menu {
+  display: flex;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header__menu-item {
+  text-transform: uppercase;
+  margin-right: 15px;
+  cursor: pointer;
+  // transition: $main-transition;
+
+  // &:hover {
+  //   color: $menu-hover;
+  // }
+}

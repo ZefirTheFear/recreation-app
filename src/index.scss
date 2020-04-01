@@ -1,0 +1,23 @@
+@import "./utils/_reset.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  box-sizing: border-box;
+}
+
+input {
+  user-select: auto;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #fff;
+  background: rgb(121, 121, 121);
+}

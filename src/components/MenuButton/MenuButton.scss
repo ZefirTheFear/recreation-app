@@ -1,0 +1,44 @@
+@import "../../utils/variables.scss";
+
+.menu-btn {
+  display: none;
+  margin-left: auto;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: $menu-btn-transition;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+
+  &.menu-btn_close {
+    transform: rotate(180deg);
+
+    .menu-btn__line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  // &:hover {
+  //   .menu-btn__line {
+  //     background: $menu-hover;
+  //     transition: all 0.5s ease-out, background-color 0.2s ease-out;
+  //   }
+  // }
+}
+
+.menu-btn__line {
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  transition: $menu-btn-transition;
+}
