@@ -1,0 +1,38 @@
+@import "../../utils/variables.scss";
+
+.slider-main {
+  width: 100%;
+  height: 100vh;
+}
+
+.slider-main__navigation {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  bottom: 2.5rem;
+  z-index: $main-slider-nav-z-i;
+
+  .slider-main__navigation-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 75px;
+    margin: 0 0.5rem;
+    background: rgba($color: #000000, $alpha: 0.5);
+    border-radius: 4px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: 0.25s;
+
+    &:hover,
+    &.slider-main__navigation-item_active {
+      width: 120px;
+      height: 90px;
+      background: rgba($color: #000000, $alpha: 1);
+    }
+  }
+}

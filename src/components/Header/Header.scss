@@ -5,9 +5,8 @@
   top: 0;
   width: 100%;
   height: $header-height;
-  z-index: 10;
+  z-index: $header-z-i;
   background: $header-bg;
-  // border-bottom: 1px solid white;
 }
 
 .header__inner {
