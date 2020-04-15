@@ -7,6 +7,11 @@
   height: $header-height;
   z-index: $header-z-i;
   background: $header-bg;
+  transition: $mobile-menu-transition;
+
+  &.header_opaque {
+    background: $header-bg-opaque;
+  }
 }
 
 .header__inner {
@@ -36,12 +41,13 @@
 }
 
 .header__menu-item {
+  font-size: 1.2rem;
   text-transform: uppercase;
-  margin-right: 15px;
+  margin-right: 2.5rem;
   cursor: pointer;
-  // transition: $main-transition;
+  transition: $main-transition;
 
-  // &:hover {
-  //   color: $menu-hover;
-  // }
+  &:hover {
+    color: $main-hover-color;
+  }
 }

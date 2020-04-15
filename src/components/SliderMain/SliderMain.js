@@ -2,10 +2,15 @@ import React, { useRef, useState, useCallback } from "react";
 
 import Slide from "./Slide/Slide";
 
-import Vid1 from "../../assets/videos/kan.mp4";
+import Vid1 from "../../assets/videos/kaniv.mp4";
 import Vid2 from "../../assets/videos/wat.mp4";
 import Vid3 from "../../assets/videos/land.mp4";
-// import Vid4 from "../../assets/video-test/003.mp4";
+import Vid4 from "../../assets/videos/tent.mp4";
+
+import PreviewImg1 from "../../assets/videos/preview_img/kan-pr.jpg";
+import PreviewImg2 from "../../assets/videos/preview_img/wat-pr.jpg";
+import PreviewImg3 from "../../assets/videos/preview_img/land-pr.jpg";
+import PreviewImg4 from "../../assets/videos/preview_img/night-pr.jpg";
 
 import "./SliderMain.scss";
 
@@ -16,27 +21,31 @@ const SliderMain = () => {
     {
       id: 0,
       src: Vid1,
-      description: "first"
+      previewSrc: PreviewImg1,
+      description: `канев`
     },
     {
       id: 1,
       src: Vid2,
-      description: "second"
+      previewSrc: PreviewImg2,
+      description: `отдых на воде`
     },
     {
       id: 2,
       src: Vid3,
-      description: "third"
+      previewSrc: PreviewImg3,
+      description: `развлечения на суше`
+    },
+    {
+      id: 3,
+      src: Vid4,
+      previewSrc: PreviewImg4,
+      description: `ночевка на природе`
     }
-    // {
-    //   id: 3,
-    //   src: Vid4,
-    //   description: "fourth"
-    // }
   ]);
 
   const nextSlide = useCallback(() => {
-    setActiveSlide(curState => curState + 1);
+    setActiveSlide((curState) => curState + 1);
   }, []);
 
   // const intervalValue = useRef(10000);
@@ -45,15 +54,15 @@ const SliderMain = () => {
   //   interval.current = setInterval(nexSlide, intervalValue.current);
   // }, [nextSlide]);
 
-  const changeSlide = id => {
-    setActiveSlide(id);
+  const changeSlide = (e) => {
+    setActiveSlide(+e.currentTarget.getAttribute("data-id"));
     // clearInterval(interval.current);
     // interval.current = setInterval(nextSlide, intervalValue.current);
   };
 
   return (
     <section className="slider-main">
-      {slidesData.current.map(slide => (
+      {slidesData.current.map((slide) => (
         <Slide
           key={slide.id}
           id={slide.id}
@@ -64,7 +73,7 @@ const SliderMain = () => {
         />
       ))}
       <ul className="slider-main__navigation">
-        {slidesData.current.map(slide => (
+        {slidesData.current.map((slide) => (
           <li
             className={
               "slider-main__navigation-item" +
@@ -73,9 +82,13 @@ const SliderMain = () => {
                 : "")
             }
             key={slide.id}
-            onClick={() => changeSlide(slide.id)}
+            data-id={slide.id}
+            // onClick={() => changeSlide(slide.id)}
+            onClick={changeSlide}
           >
-            <div>{slide.id}</div>
+            <div className="slider-main__navigation-item-img-container">
+              <img className="slider-main__navigation-item-img" src={slide.previewSrc} alt="img" />
+            </div>
           </li>
         ))}
       </ul>

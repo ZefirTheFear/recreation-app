@@ -1,0 +1,14 @@
+@import "../../utils/variables.scss";
+
+.map__close-panorama {
+  position: absolute;
+  padding: 5px 5px;
+  left: 5vw;
+  top: 80px;
+  border-radius: 5px;
+  z-index: $close-panorama-btn-z-i;
+  background: $main-bg;
+  color: $main-hover-color;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

@@ -1,12 +1,33 @@
 // metrics
 $header-height: 60px;
+$main-slider-mobile-height: 80vh;
+$initial-main-slider-navigation-item-height: 56px;
+$initial-main-slider-navigation-item-width: 100px;
 
 // colors
-$header-bg: rgba(0, 0, 0, 0.5);
+// $main-bg: linear-gradient(45deg, #00f260, #0575e6);
+// $main-bg: linear-gradient(45deg, #9b22eb, #e605c8);
+$main-color: #f0fff0;
+$main-hover-color: #eece1a;
+// $main-bg: #383838;
+$main-bg: #004358;
+$header-bg: rgba($main-bg, 0.5);
+$header-bg-opaque: rgba($main-bg, 1);
+$main-slider-description-bg: rgba($main-bg, 0.5);
 
+// transitions
+$main-transition: all 0.2s ease-out;
 $menu-btn-transition: all 0.5s ease-out;
 $mobile-menu-transition: all 0.8s cubic-bezier(0.9, 0, 0.33, 1);
+$change-slides-transition-duration: 500;
 
-$header-z-i: 1;
-$mobile-menu-z-i: 2;
-$main-slider-nav-z-i: 1;
+// z-i
+$header-z-i: 11;
+$mobile-menu-z-i: 12;
+$main-slider-nav-z-i: 10;
+$contacts-info-z-i: 10;
+$close-panorama-btn-z-i: 10;
+
+:export {
+  changeSlidesTransitionDuration: $change-slides-transition-duration;
+}

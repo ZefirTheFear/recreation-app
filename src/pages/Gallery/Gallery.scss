@@ -1,8 +1,37 @@
 .gallery {
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+.g {
   font-size: 5rem;
+}
+
+.color-test {
+  // background: #00af67;
+  // background: #00bc66;
+  // background: #03b188;
+  // background: #00bb98;
+  // background: darken(#00bb98, 5);
+  // background: #2cc192;
+  // background: #08a982;
+  // background: #00af82;
+  // background: #20af82;
+  // background: #13ab82;
+  // background: #00af82;
+  // background: #20af82;
+  // background: #13ab82;
+
+  background: mix(#00bb98, #11501c, 30%);
+  background: lighten(mix(#00bb98, #11501c, 60%), 5);
+  background: saturate(lighten(mix(#00bb98, #11501c, 60%), 5), 5);
+
+  display: flex;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 5px;
 }

@@ -1,0 +1,21 @@
+.our-services {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.g {
+  font-size: 5rem;
+}
+
+.color-test {
+  background: saturate(lighten(mix(#00bb98, #11501c, 60%), 5), 5);
+
+  display: flex;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 5px;
+}

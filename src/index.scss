@@ -1,6 +1,8 @@
 @import "./utils/_reset.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+
+@import "./utils/variables.scss";
 
 * {
   user-select: none;
@@ -14,10 +16,12 @@ input {
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: #fff;
-  background: #000;
+  color: $main-color;
+  background: $main-bg;
+
+  overflow: hidden;
 }

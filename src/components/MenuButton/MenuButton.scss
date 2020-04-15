@@ -26,19 +26,12 @@
       }
     }
   }
-
-  // &:hover {
-  //   .menu-btn__line {
-  //     background: $menu-hover;
-  //     transition: all 0.5s ease-out, background-color 0.2s ease-out;
-  //   }
-  // }
 }
 
 .menu-btn__line {
   width: 28px;
   height: 3px;
   margin: 5px 0;
-  background: #fff;
+  background: $main-color;
   transition: $menu-btn-transition;
 }

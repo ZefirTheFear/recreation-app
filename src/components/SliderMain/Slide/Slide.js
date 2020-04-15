@@ -1,15 +1,17 @@
 import React, { useRef, useEffect, useCallback } from "react";
 
+import variables from "../../../utils/_variables.scss";
+
 import "./Slide.scss";
 
-const Slide = ({ id, isActive, src, nextSlide }) => {
+const Slide = ({ id, isActive, src, description, nextSlide }) => {
   const video = useRef();
+  const timer = useRef();
 
   const onEndVideo = useCallback(() => {
-    console.log(`${id} has ended`);
+    // console.log(`${id} has ended`);
     nextSlide();
-    // video.current.currentTime = 0;
-  }, [id, nextSlide]);
+  }, [nextSlide]);
 
   useEffect(() => {
     video.current.addEventListener("ended", onEndVideo);
@@ -17,16 +19,27 @@ const Slide = ({ id, isActive, src, nextSlide }) => {
 
   useEffect(() => {
     if (isActive) {
-      video.current.currentTime = 0;
       video.current.play();
     } else {
       video.current.pause();
+      timer.current = setTimeout(() => {
+        video.current.currentTime = 0;
+      }, variables.changeSlidesTransitionDuration);
     }
   }, [isActive]);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timer.current);
+    };
+  }, []);
 
   return (
     <div className={"slide" + (isActive ? " slide_active" : "")}>
       <video className="slide__vid" src={src} muted ref={video} />
+      <div className="slide__description">
+        <pre>{description}</pre>
+      </div>
     </div>
   );
 };
