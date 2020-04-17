@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import logo from "../../assets/spinner-logo.svg";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import MenuButton from "../MenuButton/MenuButton";
 
 import * as mobileMenuActions from "../../store/actions/mobileMenuActions";
@@ -45,7 +45,8 @@ const Header = ({ history }) => {
     <header className={"header" + (isMenuOpened || isHeaderOpaque ? " header_opaque" : "")}>
       <div className="header__inner">
         <div className="header__logo" onClick={onClickLogo}>
-          <img src={logo} alt="logo" className="header__logo-img" />
+          {/* <img src={logo} alt="logo" className="header__logo-img" /> */}
+          <Logo className="header__logo-icon" />
         </div>
         <nav className="header__menu">
           {navItems.current.map((item) => (

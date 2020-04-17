@@ -1,7 +1,7 @@
 @import "../../utils/variables.scss";
 
 .menu-mobile {
-  position: absolute;
+  position: fixed;
   left: -100px;
   top: $header-height;
   width: 100px;
@@ -42,7 +42,13 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  &:hover {
+  &:active {
     color: $main-hover-color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $main-hover-color;
+    }
   }
 }

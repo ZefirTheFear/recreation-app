@@ -3,11 +3,13 @@
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: $header-height;
   z-index: $header-z-i;
   background: $header-bg;
   transition: $mobile-menu-transition;
+  border-bottom: 1px solid $main-color;
 
   &.header_opaque {
     background: $header-bg-opaque;
@@ -15,21 +17,38 @@
 }
 
 .header__inner {
-  width: 90%;
+  width: 60%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 }
 
 .header__logo {
-  height: 90%;
+  display: flex;
   margin-right: 5rem;
   cursor: pointer;
 }
 
-.header__logo-img {
-  height: 100%;
+.header__logo-icon {
+  fill: $main-color;
+  height: calc(#{$header-height} * 0.7);
+  width: calc(#{$header-height} * 0.7);
+  transition: $main-transition;
+
+  &:active {
+    fill: $main-hover-color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      fill: $main-hover-color;
+    }
+  }
 }
 
 .header__menu {
@@ -47,7 +66,13 @@
   cursor: pointer;
   transition: $main-transition;
 
-  &:hover {
+  &:active {
     color: $main-hover-color;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $main-hover-color;
+    }
   }
 }

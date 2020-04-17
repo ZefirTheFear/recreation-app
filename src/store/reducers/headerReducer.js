@@ -1,7 +1,7 @@
 import * as headerActions from "../actions/headerActions";
 
 const initialState = {
-  isOpaque: false
+  isOpaque: true
 };
 
 export default (state = initialState, action) => {

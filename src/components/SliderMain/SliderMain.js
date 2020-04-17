@@ -1,4 +1,6 @@
 import React, { useRef, useState, useCallback } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import Slide from "./Slide/Slide";
 
@@ -12,10 +14,24 @@ import PreviewImg2 from "../../assets/videos/preview_img/wat-pr.jpg";
 import PreviewImg3 from "../../assets/videos/preview_img/land-pr.jpg";
 import PreviewImg4 from "../../assets/videos/preview_img/night-pr.jpg";
 
+import * as headerActions from "../../store/actions/headerActions";
+
 import "./SliderMain.scss";
 
 const SliderMain = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(headerActions.makeHeaderTransparent());
+  }, [dispatch]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(headerActions.makeHeaderOpaque());
+    };
+  }, [dispatch]);
 
   const slidesData = useRef([
     {

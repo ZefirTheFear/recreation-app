@@ -1,21 +1,135 @@
+@import "../../utils/variables.scss";
+
 .our-services {
+  position: relative;
+  padding: calc(#{$header-height} + 20px) 0 20px 0;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
-.g {
-  font-size: 5rem;
-}
+// .our-services__bg {
+//   padding: 1rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   width: 100%;
+//   height: calc(100vh - #{$header-height});
+//   position: fixed;
+//   left: 0;
+//   z-index: $our-services-bg-z-i;
 
-.color-test {
-  background: saturate(lighten(mix(#00bb98, #11501c, 60%), 5), 5);
+//   .our-services__bg-div {
+//     width: 40vw;
+//     height: 25vh;
+//     opacity: 0.5;
 
+//     &.our-services__bg-div_center {
+//       align-self: flex-end;
+//     }
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+.our-services__about-us {
+  position: relative;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  z-index: $our-services-about-us-z-i;
+}
+
+.our-services__about-us-heading,
+.our-services__list-heading {
+  text-align: center;
   text-transform: uppercase;
-  padding: 1rem;
-  border-radius: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
+.our-services__about-us-paragraph {
+  text-align: center;
+  width: 60%;
+  font-size: 1.15rem;
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
+}
+
+.our-services__list {
+  width: 100%;
+  position: relative;
+  z-index: $our-services-list-z-i;
+}
+
+.our-services__table {
+  color: $main-color;
+  margin-top: 1rem;
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+
+  th {
+    background: #000;
+    height: 3rem;
+    white-space: pre-wrap;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  td,
+  th {
+    vertical-align: top;
+    padding: 0.5rem 0.5rem;
+    border-right: 1px solid $main-color;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  tbody {
+    tr {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2rem;
+        text-align: center;
+      }
+
+      &:nth-child(even) {
+        background: lighten($table-color, 7);
+      }
+      &:nth-child(odd) {
+        background: lighten($table-color, 12);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: ($main-hover-color);
+        }
+      }
+    }
+  }
 }

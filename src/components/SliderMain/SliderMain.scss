@@ -31,12 +31,28 @@
     cursor: pointer;
     transition: 0.25s;
 
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        width: $initial-main-slider-navigation-item-width;
+        height: $initial-main-slider-navigation-item-height;
+        border-color: $main-color;
+
+        @media (max-width: 766px) {
+          width: calc(#{$initial-main-slider-navigation-item-width} / 1.2);
+          height: calc(#{$initial-main-slider-navigation-item-height} / 1.2);
+        }
+
+        .slider-main__navigation-item-img {
+          opacity: 1;
+        }
+      }
+    }
+
     @media (max-width: 766px) {
       width: calc(#{$initial-main-slider-navigation-item-width} / 1.5);
       height: calc(#{$initial-main-slider-navigation-item-height} / 1.5);
     }
 
-    &:hover,
     &.slider-main__navigation-item_active {
       width: $initial-main-slider-navigation-item-width;
       height: $initial-main-slider-navigation-item-height;

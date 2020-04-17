@@ -1,12 +1,100 @@
-import React from "react";
+import React, { useRef } from "react";
+
+// import Img1 from "../../assets/images/0004.jpg";
+// import Img2 from "../../assets/images/0003.jpg";
+// import Img3 from "../../assets/images/0001.jpg";
 
 import "./OurServices.scss";
 
 const OurServices = () => {
+  const tableHeader = useRef([
+    { title: "Услуга", id: 1 },
+    { title: "Стоимость", id: 2 },
+    { title: "Дополнительные \n условия", id: 3 }
+  ]);
+
+  const services = useRef([
+    {
+      title: "Палатка",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Спальник",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Каремат",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Посуда",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Дрова",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    }
+  ]);
+
   return (
     <main className="our-services">
-      <div className="g">Services</div>
-      <div className="color-test">check it out</div>
+      {/* <div className="our-services__bg">
+        <div className="our-services__bg-div our-services__bg-div_top">
+          <img src={Img1} alt="img" className="our-services__bg-img" />
+        </div>
+        <div className="our-services__bg-div our-services__bg-div_center">
+          <img src={Img2} alt="img" className="our-services-bg-img" />
+        </div>
+        <div className="our-services__bg-div our-services__bg-div_bottom">
+          <img src={Img3} alt="img" className="our-services-bg-img" />
+        </div>
+      </div> */}
+      <section className="our-services__about-us">
+        <h4 className="our-services__about-us-heading">О нас</h4>
+        <p className="our-services__about-us-paragraph">
+          Мы - группа энтузиастов, которые любят проводить активный летний отдых на природе. Кроме
+          того, что мы сами любим отдыхать, мы еще и умеем организовать его для других. Поэтому
+          приезжайте к нам, насладитесь природой и огромным разнообразием развлечений, которые у нас
+          есть.
+        </p>
+      </section>
+      <section className="our-services__list">
+        <h4 className="our-services__list-heading">Наши услуги</h4>
+        <table className="our-services__table">
+          <thead>
+            <tr>
+              {tableHeader.current.map((item) => (
+                <th key={item.id}>
+                  <div>{item.title}</div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {services.current.map((service) => (
+              <tr key={service.title}>
+                {tableHeader.current.map((item) => (
+                  <td key={item.id}>
+                    <div>
+                      {item.id === 1
+                        ? service.title
+                        : item.id === 2
+                        ? service.price
+                        : service.extraTerms}
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+      {/* <div>hello</div> */}
     </main>
   );
 };

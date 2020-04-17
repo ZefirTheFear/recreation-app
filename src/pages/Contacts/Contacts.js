@@ -1,29 +1,14 @@
-import React, { useRef } from "react";
-// import { useEffect} from "react";
-// import { useDispatch } from "react-redux";
+import React, { useRef, useEffect } from "react";
 
-import { FaMapMarkerAlt, FaTelegramPlane, FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 // import { FaClock } from "react-icons/fa";
+// import { FaTelegramPlane } from "react-icons/fa";
 
 import Map from "../../components/Map/Map";
-
-// import * as headerActions from "../../store/actions/headerActions";
 
 import "./Contacts.scss";
 
 const Contacts = (props) => {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(headerActions.makeHeaderOpaque());
-  // }, [dispatch]);
-
-  // useEffect(() => {
-  //   return () => {
-  //     dispatch(headerActions.makeHeaderTransparent());
-  //   };
-  // }, [dispatch]);
-
   const contactItems = useRef([
     {
       title: "address",
@@ -34,18 +19,28 @@ const Contacts = (props) => {
       title: "phone",
       icon: <FaPhone />,
       desc: "(055) 555-55-55"
-    },
-    {
-      title: "telegram",
-      icon: <FaTelegramPlane />,
-      desc: "t.me/visyachka"
     }
+    // {
+    //   title: "telegram",
+    //   icon: <FaTelegramPlane />,
+    //   desc: "t.me/visyachka"
+    // },
     // {
     //   title: "schedule",
     //   icon: <FaClock />,
     //   desc: "Пн-Пт: 09-21, Сб-ВС: 10-20"
     // }
   ]);
+
+  useEffect(() => {
+    document.documentElement.style.overflow = "hidden";
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
+  }, []);
 
   return (
     <main className="contacts">
