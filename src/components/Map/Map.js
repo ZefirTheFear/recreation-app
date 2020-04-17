@@ -1,26 +1,20 @@
 import React, { useState, useRef, useCallback } from "react";
-import {
-  GoogleMap,
-  LoadScript,
-  Marker,
-  // InfoWindow,
-  StreetViewPanorama
-} from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker, StreetViewPanorama } from "@react-google-maps/api";
 import { MdArrowBack } from "react-icons/md";
 
 import mapStyles from "../../data/mapStyles.js";
-// import markerIcon from "../../assets/logo_as_marker.svg";
 import markerIcon from "../../assets/marker.svg";
 
 import variables from "../../utils/_variables.scss";
 
 import "./Map.scss";
 
-const Map = () => {
-  // console.log(JSON.stringify(mapStyles));
+function Map() {
+  const { isLoaded, loadError } = useLoadScript({
+    // googleMapsApiKey: "AIzaSyDeyOL4XsjSdXiolUI7kiLhJyEMRop_U24"
+  });
 
   const [isPanorama, setIsPanorama] = useState(false);
-  // const [zoomed, setZoomed] = useState(0);
 
   const mapOptions = useRef({
     mapTypeId: "terrain",
@@ -73,17 +67,6 @@ const Map = () => {
     }
   });
 
-  // const infoWindowOptions = useRef({
-  //   position: {
-  //     lat: 49.7390304,
-  //     lng: 31.5169775
-  //   }
-  // });
-
-  // const onZoomChanged = useCallback(() => {
-  //   setZoomed((zoomed) => zoomed + 1);
-  // }, []);
-
   const onClickMarker = useCallback(() => {
     setIsPanorama(true);
   }, []);
@@ -92,15 +75,9 @@ const Map = () => {
     setIsPanorama(false);
   }, []);
 
-  return (
-    <LoadScript
-    // googleMapsApiKey={process.env.REACT_APP_GOOGLE_KEY}
-    >
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle.current}
-        options={mapOptions.current}
-        // onZoomChanged={onZoomChanged}
-      >
+  const renderMap = () => {
+    return (
+      <GoogleMap mapContainerStyle={mapContainerStyle.current} options={mapOptions.current}>
         {isPanorama ? (
           <>
             <StreetViewPanorama options={panoramaOptions.current} />
@@ -108,19 +85,22 @@ const Map = () => {
               <MdArrowBack />
             </div>
           </>
-        ) : (
-          <>
-            <Marker options={markerOptions.current} onClick={onClickMarker} />
-            {/* {zoomed > 1 ? null : (
-              <InfoWindow options={infoWindowOptions.current}>
-                <div className="map__info-window">нажми. мы где-то тут</div>
-              </InfoWindow>
-            )} */}
-          </>
-        )}
+        ) : null}
+        <Marker
+          options={markerOptions.current}
+          onClick={onClickMarker}
+          animation={!isPanorama ? window.google.maps.Animation.BOUNCE : null}
+          visible={!isPanorama}
+        />
       </GoogleMap>
-    </LoadScript>
-  );
-};
+    );
+  };
+
+  if (loadError) {
+    return <div>Map cannot be loaded right now, sorry.</div>;
+  }
+
+  return isLoaded ? renderMap() : <div>wait pls</div>;
+}
 
 export default Map;
