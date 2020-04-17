@@ -11,7 +11,7 @@ import "./Map.scss";
 
 function Map() {
   const { isLoaded, loadError } = useLoadScript({
-    // googleMapsApiKey: "AIzaSyDeyOL4XsjSdXiolUI7kiLhJyEMRop_U24"
+    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
   });
 
   const [isPanorama, setIsPanorama] = useState(false);
