@@ -3,7 +3,7 @@ import { GoogleMap, useLoadScript, Marker, StreetViewPanorama } from "@react-goo
 import { MdArrowBack } from "react-icons/md";
 
 import mapStyles from "../../data/mapStyles.js";
-import markerIcon from "../../assets/marker.svg";
+import markerIcon from "../../assets/svgs/marker.svg";
 
 import variables from "../../utils/_variables.scss";
 

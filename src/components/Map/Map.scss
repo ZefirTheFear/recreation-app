@@ -10,6 +10,10 @@
   background: $main-bg;
   font-size: 1.5rem;
   cursor: pointer;
+
+  svg {
+    display: block;
+  }
 }
 
 .map__info-window {

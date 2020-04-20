@@ -63,6 +63,15 @@ const OurServices = () => {
           есть.
         </p>
       </section>
+      <section className="our-services__advantage">
+        <h4 className="our-services__advantage-heading">Почему мы?</h4>
+        <p className="our-services__advantage-paragraph">
+          С нами вам не надо думать о наличии снаряжения. Вам не надо ничего брать с собой. Все
+          необходимое для первоклассного кемпинга у нас есть. Мы занимаемся не просто прокатом, а и
+          обеспечением быта. Вам не надо будет строить палаточный лагерь, искать дрова и прочие
+          мелочи. Это мы сделаем за вас.
+        </p>
+      </section>
       <section className="our-services__list">
         <h4 className="our-services__list-heading">Наши услуги</h4>
         <table className="our-services__table">

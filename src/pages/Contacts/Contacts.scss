@@ -39,5 +39,9 @@
 }
 
 .contacts__info-unit-icon {
-  margin: 5px 20px 0 0;
+  margin: 2px 20px 0 0;
+
+  svg {
+    display: block;
+  }
 }

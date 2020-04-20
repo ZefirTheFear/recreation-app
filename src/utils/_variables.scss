@@ -1,8 +1,19 @@
+// fonts
+$main-font: "PT Sans Narrow", sans-serif;
+$secondary-font: "PT Sans Narrow", sans-serif;
+// $alternaive-font: "ljk_Downcome", sans-serif;
+// $alternaive-font: "condens_bold_regular", sans-serif;
+// $alternaive-font: "amaz_stalker", sans-serif;
+// $alternaive-font: "ds-narrow", sans-serif;
+// $alternaive-font: "ljk_roadkill", sans-serif;
+
 // metrics
 $header-height: 60px;
 $main-slider-mobile-height: 80vh;
 $initial-main-slider-navigation-item-height: 56px;
 $initial-main-slider-navigation-item-width: 100px;
+$initial-gallery-slider-navigation-item-height: 168px;
+$initial-gallery-slider-navigation-item-width: 300px;
 
 // colors
 $main-bg-from: #e605c8;
@@ -13,6 +24,7 @@ $main-color: #f0fff0;
 // $main-hover-color: #04ad79;
 $main-hover-color: #fd7400;
 $table-color: #1a1a1a;
+$modal-bg-color: #1a1a1a;
 // $main-bg: #383838;
 // $main-bg: #004358;
 // $main-bg: #521779;
@@ -39,6 +51,7 @@ $close-panorama-btn-z-i: 10;
 $our-services-bg-z-i: 9;
 $our-services-about-us-z-i: 10;
 $our-services-list-z-i: 10;
+$gallery-slider-z-i: 13;
 
 :export {
   changeSlidesTransitionDuration: $change-slides-transition-duration;

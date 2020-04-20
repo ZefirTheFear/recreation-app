@@ -40,7 +40,8 @@
 //   }
 // }
 
-.our-services__about-us {
+.our-services__about-us,
+.our-services__advantage {
   position: relative;
   width: 100%;
   display: flex;
@@ -51,6 +52,7 @@
 }
 
 .our-services__about-us-heading,
+.our-services__advantage-heading,
 .our-services__list-heading {
   text-align: center;
   text-transform: uppercase;
@@ -59,7 +61,8 @@
   white-space: pre-wrap;
 }
 
-.our-services__about-us-paragraph {
+.our-services__about-us-paragraph,
+.our-services__advantage-paragraph {
   text-align: center;
   width: 60%;
   font-size: 1.15rem;

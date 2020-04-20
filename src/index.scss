@@ -1,9 +1,29 @@
 @import "./utils/_reset.css";
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 @import "./utils/variables.scss";
+
+@font-face {
+  font-family: "ljk_Downcome";
+  src: url(./assets/fonts/ljk_downcome.otf);
+}
+@font-face {
+  font-family: "condens_bold_regular";
+  src: url(./assets/fonts/condens_bold_regular.otf);
+}
+@font-face {
+  font-family: "amaz_stalker";
+  src: url(./assets/fonts/amaz_stalker.ttf);
+}
+@font-face {
+  font-family: "ds-narrow";
+  src: url(./assets/fonts/ds-narrow.ttf);
+}
+@font-face {
+  font-family: "ljk_roadkill";
+  src: url(./assets/fonts/ljk_roadkill.otf);
+}
 
 * {
   user-select: none;
@@ -17,7 +37,8 @@ input {
 }
 
 body {
-  font-family: "PT Sans Narrow", sans-serif;
+  // letter-spacing: 3px;
+  font-family: $main-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

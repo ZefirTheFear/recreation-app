@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../assets/svgs/logo.svg";
 import MenuButton from "../MenuButton/MenuButton";
 
 import * as mobileMenuActions from "../../store/actions/mobileMenuActions";
