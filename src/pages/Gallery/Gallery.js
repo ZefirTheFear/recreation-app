@@ -67,8 +67,12 @@ const Gallery = () => {
   }, []);
 
   const previousSlide = useCallback(() => {
-    setActiveImage((curImg) => curImg - 1);
-  }, []);
+    if (activeImage > 0) {
+      setActiveImage((curImg) => curImg - 1);
+    } else {
+      setActiveImage(images.current.length - 1);
+    }
+  }, [activeImage]);
 
   const nextSlide = useCallback(() => {
     setActiveImage((curImg) => curImg + 1);
