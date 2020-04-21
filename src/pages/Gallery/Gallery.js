@@ -9,6 +9,8 @@ import Img3 from "../../assets/images/gallery/0003.jpg";
 import Img4 from "../../assets/images/gallery/0004.jpg";
 import Img5 from "../../assets/images/gallery/0005.jpg";
 import Img6 from "../../assets/images/gallery/0006.jpg";
+import Img7 from "../../assets/images/gallery/0007.jpg";
+import Img8 from "../../assets/images/gallery/0008.jpg";
 
 import "./Gallery.scss";
 
@@ -43,10 +45,20 @@ const Gallery = () => {
       id: 5,
       description: "вода",
       img: Img6
+    },
+    {
+      id: 6,
+      description: "закат",
+      img: Img7
+    },
+    {
+      id: 7,
+      description: "закат",
+      img: Img8
     }
   ]);
 
-  const [isModalSliderShown, setIsModalSliderShown] = useState(false);
+  const [isModalSliderShown, setIsModalSliderShown] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
@@ -90,6 +102,9 @@ const Gallery = () => {
       ))}
       {isModalSliderShown ? (
         <div className="gallery__slider">
+          <div className="gallery__slider-mobile-control-prev">
+            <IoMdArrowRoundBack onClick={previousSlide} />
+          </div>
           <div className="gallery__slides-container">
             <div className="gallery__close-slider" onClick={closeSlider}>
               <IoIosCloseCircle />
@@ -104,15 +119,15 @@ const Gallery = () => {
                     : "")
                 }
               >
-                <div
-                  className="gallery__slider-img-container"
-                  // style={{ backgroundImage: `url(${img.img})` }}
-                >
+                <div className="gallery__slider-img-container">
                   <img className="gallery__img" src={img.img} alt="img" />
                 </div>
                 <p>{img.description}</p>
               </div>
             ))}
+          </div>
+          <div className="gallery__slider-mobile-control-next">
+            <IoMdArrowRoundForward onClick={nextSlide} />
           </div>
           <div className="gallery__slider-controls">
             <IoMdArrowRoundBack onClick={previousSlide} />

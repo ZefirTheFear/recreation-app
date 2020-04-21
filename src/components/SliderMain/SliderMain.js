@@ -38,7 +38,7 @@ const SliderMain = () => {
       id: 0,
       src: Vid1,
       previewSrc: PreviewImg1,
-      description: `канев`
+      description: `кемпинг на Днепре`
     },
     {
       id: 1,
