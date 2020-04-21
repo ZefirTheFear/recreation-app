@@ -36,7 +36,7 @@ const Slide = ({ id, isActive, src, description, nextSlide }) => {
 
   return (
     <div className={"slide" + (isActive ? " slide_active" : "")}>
-      <video className="slide__vid" src={src} muted ref={video} />
+      <video className="slide__vid" src={src} muted ref={video} playsInline />
       <div className="slide__description">
         <pre>{description}</pre>
       </div>

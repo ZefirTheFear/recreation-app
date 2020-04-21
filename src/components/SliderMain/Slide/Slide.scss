@@ -38,6 +38,7 @@
   align-items: flex-end;
   text-align: center;
   padding-bottom: 20vh;
+  padding-bottom: calc(var(--vh) * 20);
 
   @media (max-width: 767px) {
     position: relative;
@@ -45,6 +46,9 @@
     padding: 0;
     height: calc(
       100vh - #{$main-slider-mobile-height} - #{$initial-main-slider-navigation-item-height}
+    );
+    height: calc(
+      var(--vh) * 100 - #{$main-slider-mobile-height} - #{$initial-main-slider-navigation-item-height}
     );
     border-top: 1px solid $main-color;
     border-bottom: 1px solid $main-color;
@@ -55,6 +59,7 @@
     height: 100%;
     align-items: flex-end;
     padding-bottom: 20vh;
+    padding-bottom: calc(var(--vh) * 20);
   }
 
   pre {

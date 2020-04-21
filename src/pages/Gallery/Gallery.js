@@ -58,7 +58,7 @@ const Gallery = () => {
     }
   ]);
 
-  const [isModalSliderShown, setIsModalSliderShown] = useState(true);
+  const [isModalSliderShown, setIsModalSliderShown] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {

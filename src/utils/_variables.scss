@@ -9,7 +9,7 @@ $secondary-font: "PT Sans Narrow", sans-serif;
 
 // metrics
 $header-height: 60px;
-$main-slider-mobile-height: 80vh;
+$main-slider-mobile-height: calc(var(--vh) * 80);
 $initial-main-slider-navigation-item-height: 56px;
 $initial-main-slider-navigation-item-width: 100px;
 $initial-gallery-slider-navigation-item-height: 168px;

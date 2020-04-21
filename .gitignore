@@ -28,3 +28,9 @@ todo.txt
 /src/assets/recreation.prproj
 /src/assets/images/test
 /src/assets/images/original
+
+# firebase
+/functions
+/.firebase
+.firebaserc
+firebase.json

@@ -13,6 +13,15 @@ import MenuMobile from "./components/MenuMobile/MenuMobile";
 import * as mobileMenuActions from "./store/actions/mobileMenuActions";
 
 function App() {
+  // const promise = document.documentElement.requestFullscreen();
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  window.addEventListener("resize", () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+
   const isMenuOpened = useSelector((state) => state.menu.isMenuOpen);
   const dispatch = useDispatch();
 

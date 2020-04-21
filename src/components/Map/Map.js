@@ -11,7 +11,7 @@ import "./Map.scss";
 
 function Map() {
   const { isLoaded, loadError } = useLoadScript({
-    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
   });
 
   const [isPanorama, setIsPanorama] = useState(false);
@@ -30,7 +30,7 @@ function Map() {
   });
 
   const mapContainerStyle = useRef({
-    height: `calc(100vh - ${variables.headerHeight})`,
+    height: `calc(var(--vh) * 100 - ${variables.headerHeight})`,
     width: "100vw"
   });
 
