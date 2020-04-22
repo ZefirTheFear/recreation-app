@@ -8,10 +8,12 @@
   transition: all #{$change-slides-transition-duration}ms ease-in-out;
 
   @media (max-width: 767px) {
-    height: $main-slider-mobile-height;
+    margin-top: $header-height;
+    height: calc(#{$main-slider-mobile-height} - #{$header-height});
   }
 
   @media (max-width: 767px) and (max-height: 500px) {
+    margin: 0;
     height: 100%;
   }
 }
@@ -60,6 +62,7 @@
     align-items: flex-end;
     padding-bottom: 20vh;
     padding-bottom: calc(var(--vh) * 20);
+    border: 0;
   }
 
   pre {

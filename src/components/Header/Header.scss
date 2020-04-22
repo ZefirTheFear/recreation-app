@@ -11,6 +11,14 @@
   transition: $mobile-menu-transition;
   border-bottom: 1px solid $main-color;
 
+  @media (max-width: 767px) {
+    background: $header-bg-opaque;
+  }
+
+  @media (max-width: 767px) and (max-height: 500px) {
+    background: $header-bg;
+  }
+
   &.header_opaque {
     background: $header-bg-opaque;
   }
