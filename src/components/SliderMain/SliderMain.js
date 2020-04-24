@@ -4,16 +4,6 @@ import { useDispatch } from "react-redux";
 
 import Slide from "./Slide/Slide";
 
-// import Vid1 from "../../assets/videos/kaniv-panorama.mp4";
-// import Vid2 from "../../assets/videos/water.mp4";
-// import Vid3 from "../../assets/videos/land.mp4";
-// import Vid4 from "../../assets/videos/tent.mp4";
-
-// import PreviewImg1 from "../../assets/videos/preview_img/kaniv-pr.jpg";
-// import PreviewImg2 from "../../assets/videos/preview_img/water-pr.jpg";
-// import PreviewImg3 from "../../assets/videos/preview_img/land-pr.jpg";
-// import PreviewImg4 from "../../assets/videos/preview_img/night-pr.jpg";
-
 import * as headerActions from "../../store/actions/headerActions";
 
 import "./SliderMain.scss";
