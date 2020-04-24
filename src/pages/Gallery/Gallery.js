@@ -60,6 +60,7 @@ const Gallery = () => {
 
   const [isModalSliderShown, setIsModalSliderShown] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const [initialTouchX, setInitialTouchX] = useState(null);
 
   useEffect(() => {
     if (isModalSliderShown) {
@@ -90,6 +91,27 @@ const Gallery = () => {
     setActiveImage((curImg) => curImg + 1);
   }, []);
 
+  const onTouchStart = (e) => {
+    setInitialTouchX(e.touches[0].clientX);
+  };
+
+  const onTouchEnd = (e) => {
+    if (initialTouchX) {
+      let deltaX = initialTouchX - e.changedTouches[0].clientX;
+      if (deltaX > 50) {
+        nextSlide();
+      } else if (deltaX < -50) {
+        previousSlide();
+      }
+    }
+  };
+
+  const onTouchMove = (e) => {
+    if (e.touches.length > 1) {
+      setInitialTouchX(null);
+    }
+  };
+
   return (
     <main className="gallery">
       {images.current.map((img) => (
@@ -119,7 +141,12 @@ const Gallery = () => {
                     : "")
                 }
               >
-                <div className="gallery__slider-img-container">
+                <div
+                  className="gallery__slider-img-container"
+                  onTouchStart={onTouchStart}
+                  onTouchEnd={onTouchEnd}
+                  onTouchMove={onTouchMove}
+                >
                   <img className="gallery__img" src={img.img} alt="img" />
                 </div>
                 <p>{img.description}</p>

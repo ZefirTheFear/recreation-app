@@ -17,7 +17,7 @@ const OurServices = () => {
     {
       title: "Палатка",
       price: "Входит в базовую",
-      extraTerms: "-"
+      extraTerms: "3х-местная"
     },
     {
       title: "Спальник",
@@ -35,8 +35,78 @@ const OurServices = () => {
       extraTerms: "-"
     },
     {
+      title: "Стульчик раскладной",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Стол",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Вода питьевая",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Воллейбол",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Бадминтон",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
+      title: "Фрисби",
+      price: "Входит в базовую",
+      extraTerms: "-"
+    },
+    {
       title: "Дрова",
       price: "Входит в базовую",
+      extraTerms: "1 мешок"
+    },
+    {
+      title: "ПВХ Лодка BARK-220",
+      price: "300грн/день",
+      extraTerms: "-"
+    },
+    {
+      title: "ПВХ Лодка BARK-330",
+      price: "450грн/день",
+      extraTerms: "-"
+    },
+    {
+      title: "Катание на моторной лодке",
+      price: "от 1200грн/час",
+      extraTerms: "-"
+    },
+    {
+      title: "Катание на катере",
+      price: "от 1500грн/час",
+      extraTerms: "-"
+    },
+    {
+      title: "Катание на вейкборде",
+      price: "от 1500грн/час",
+      extraTerms: "-"
+    },
+    {
+      title: "Катание на плюшке",
+      price: "от 1500грн/час",
+      extraTerms: "-"
+    },
+    {
+      title: "Катание на водных лыжах",
+      price: "от 1500грн/час",
+      extraTerms: "-"
+    },
+    {
+      title: "Прокат SUP-борда",
+      price: "500грн/день",
       extraTerms: "-"
     }
   ]);
